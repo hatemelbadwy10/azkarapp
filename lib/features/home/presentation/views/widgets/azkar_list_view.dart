@@ -1,22 +1,44 @@
-import 'package:azkarapp/features/home/presentation/views/widgets/list_view_item.dart';
+import 'package:azkarapp/features/home/presentation/manger/all_azkar_cubit/all_azkar_cubit.dart';
+import 'package:azkarapp/features/home/presentation/manger/all_azkar_cubit/all_azkar_cubit.dart';
+import 'package:azkarapp/features/home/presentation/views/widgets/azkar_list_view_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 class AzkarListView extends StatelessWidget {
-  const AzkarListView({super.key, required this.listViewItem});
-  final Widget listViewItem;
+  const AzkarListView({super.key,});
+
+  //final Widget listViewItem;
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Padding(
-        padding: const EdgeInsets.only(top: 8.0),
-        child: ListView.builder(
-            itemBuilder: (context,index){
-              return listViewItem;
+    return BlocBuilder<AllAzkarCubit, AllAzkarState>(
+      builder: (context, state) {
+        if (state is AllAzkarSuccess) {
+          return Expanded(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: ListView.builder(
+                  itemCount: state.azkarModel.length,
+                  itemBuilder: (context, index) {
 
-
-            }
+                return AzkarListViewItem(azkarModel: state.azkarModel[index],) ;
+              }),
             ),
-      ),
+          );
+
+        }
+        else if( state is AllAzkarFailure){
+          return Text(state.errMassage);
+
+        }
+        else if(state is AllAzkarLoading){
+          return const Center(child: CircularProgressIndicator());
+        }
+        else{
+          return const Text('u are donkey');
+        }
+
+      },
     );
   }
 }

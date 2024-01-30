@@ -2,18 +2,19 @@ import 'package:azkarapp/core/utils/styles.dart';
 import 'package:azkarapp/features/home/presentation/views/azkar_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-class AzkarListViewItem extends StatelessWidget {
-  const AzkarListViewItem({super.key});
+import '../../../data/models/elzekr_model/azkar_model.dart';
 
+class AzkarListViewItem extends StatelessWidget {
+  const AzkarListViewItem({super.key, required this.azkarModel});
+final AzkarModel azkarModel;
   @override
   Widget build(BuildContext context) {
-    return  GestureDetector(
-      onTap: (){
+    return GestureDetector(
+      onTap: () {
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => const AzkarView()),
         );
-
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 4),
@@ -21,17 +22,17 @@ class AzkarListViewItem extends StatelessWidget {
           height: 42.h,
           width: double.infinity,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
-            color: Theme.of(context).colorScheme.primaryContainer
-          ),
-
-          child:  Directionality(
+              borderRadius: BorderRadius.circular(8),
+              color: Theme.of(context).colorScheme.primaryContainer),
+          child: const Directionality(
               textDirection: TextDirection.rtl,
               child: Padding(
-                padding: const EdgeInsets.all(4),
-                child: Text('اذكار الصباح',style: Styles.textStyle14,),
+                padding: EdgeInsets.all(4),
+                child: Text(
+               'اذكار الصبح'
+                 // style: Styles.textStyle14,
+                ),
               )),
-
         ),
       ),
     );
