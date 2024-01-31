@@ -10,13 +10,15 @@ class AzkarCounterAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  const Row(
-      children: [
-        ChangeThemeIcon(),
-        AppBarContainer(),
+    return  const SafeArea(
+      child: Row(
+        children: [
+          ChangeThemeIcon(),
+          AppBarContainer(appBarText: 'عداد  الاذكار',),
 
 
-      ],
+        ],
+      ),
     );
   }
 }

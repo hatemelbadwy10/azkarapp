@@ -9,21 +9,24 @@ class AzkarCounterBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
-      children: [
-        const AzkarCounterAppBar(),
-        SizedBox(
-          height: 184.h,
-        ),
-        const CounterShape(),
-         SizedBox(height: 24.h,),
-        const CustomCounterButton(buttonLabel: 'تسبيح', textColor: Colors.white, buttonColor:MaterialStatePropertyAll(KDarkModeContainerColor)),
-         SizedBox(height: 16.h,),
-        const CustomCounterButton(buttonLabel: 'اعادة', textColor:KDarkModeContainerColor, buttonColor:MaterialStatePropertyAll(Colors.white))
+    return  Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      child: Column(
+        children: [
+          const AzkarCounterAppBar(),
+          SizedBox(
+            height: 184.h,
+          ),
+          const CounterShape(),
+           SizedBox(height: 24.h,),
+          const CustomCounterButton(buttonLabel: 'تسبيح', textColor: Colors.white, buttonColor:MaterialStatePropertyAll(KDarkModeContainerColor)),
+           SizedBox(height: 16.h,),
+          const CustomCounterButton(buttonLabel: 'اعادة', textColor:KDarkModeContainerColor, buttonColor:MaterialStatePropertyAll(Colors.white))
 
 
 
-      ],
+        ],
+      ),
     );
   }
 }

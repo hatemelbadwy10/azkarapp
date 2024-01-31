@@ -13,6 +13,8 @@ class CounterShape extends StatelessWidget {
         shape: BoxShape.circle,
             color: Theme.of(context).colorScheme.tertiaryContainer
       ),
+
+      child: Center (
       child: Text(
         '005',
         style: Styles.textStyle20.copyWith(
@@ -20,6 +22,7 @@ class CounterShape extends StatelessWidget {
           fontWeight: FontWeight.w700
         ),
       ),
+    ),
     );
   }
 }

@@ -4,8 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../utils/styles.dart';
 class AppBarContainer extends StatelessWidget {
   const AppBarContainer({
-    super.key,
-  });
+    super.key, required this.appBarText,});
+  final String appBarText;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class AppBarContainer extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 8),
         child: Directionality(
           textDirection: TextDirection.rtl,
-          child: Text('عداد الاذكار',style: Styles.textStyle14,),
+          child: Text(appBarText,style: Styles.textStyle14,),
         ),
       ),
     );

@@ -5,9 +5,11 @@ class ElsalahTimesListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  ListView.builder(itemBuilder: (context,index){
-    return const SalahTimeDetails();
-
-    });
+    return  Expanded(
+      child: ListView.builder(itemBuilder: (context,index){
+      return const SalahTimeDetails();
+      
+      }),
+    );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:azkarapp/constants.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 ThemeData lightTheme(BuildContext context) {
@@ -21,7 +22,10 @@ ThemeData lightTheme(BuildContext context) {
         primaryContainer: Colors.white,
         secondaryContainer: KDarkModeContainerColor,
         tertiaryContainer: Color(0xffDFE0F3),
-          secondary: KDarkModeContainerColor
+          secondary: KDarkModeContainerColor,
+        inversePrimary: KDarkModeContainerColor,
+      onPrimary: Color(0xff7796CB),
+      onBackground: Color(0xff878787)
 
     ),
     textTheme: Theme.of(context).textTheme.apply(
@@ -83,6 +87,24 @@ ThemeData lightTheme(BuildContext context) {
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: Colors.grey,
     ),
+    navigationBarTheme: const NavigationBarThemeData(
+      backgroundColor: Colors.white,
+      indicatorColor: Color(0xffDFE0F3),
+
+
+    ),
+    bottomNavigationBarTheme:    const BottomNavigationBarThemeData(
+      elevation: 20,
+      backgroundColor: Colors.white,
+      selectedItemColor: Colors.black,
+      selectedIconTheme: IconThemeData(
+        shadows: <Shadow>[Shadow(
+            color: Color(0xff7796CB), blurRadius: 100.0)],
+        color: Color(0xff7796CB),
+        size: 30,
+      ),
+      unselectedItemColor: Color(0xff878787),
+    )
 
   );
 }
@@ -96,13 +118,16 @@ ThemeData darkTheme(BuildContext context) {
       },
     ),*/
     primaryColor: KDarkModeContainerColor,
-    scaffoldBackgroundColor: KDarkMOdeBackGroundColor,
+    scaffoldBackgroundColor: KDarkModeBackGroundColor,
     colorScheme: Theme.of(context).colorScheme.copyWith(
         //primary: Colors.white,
         primaryContainer: KDarkModeContainerColor,
-        secondaryContainer: KDarkMOdeBackGroundColor,
+        secondaryContainer: KDarkModeBackGroundColor,
         tertiaryContainer: Color(0xffDFE0F3),
-      secondary: KDarkMOdeBackGroundColor
+      secondary: KDarkModeBackGroundColor,
+        inversePrimary: Colors.white,
+        onPrimary: Color(0xff7796CB),
+        onBackground:Colors.white
     ),
     textTheme: Theme.of(context)
         .textTheme
@@ -143,5 +168,20 @@ ThemeData darkTheme(BuildContext context) {
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: Colors.black,
     ),
+      navigationBarTheme: const NavigationBarThemeData(
+        backgroundColor: KDarkModeContainerColor,
+        indicatorColor:  KDarkModeBackGroundColor,
+
+      ),
+      bottomNavigationBarTheme:  const BottomNavigationBarThemeData(
+        backgroundColor: KDarkModeContainerColor,
+       selectedItemColor: KDarkModeBackGroundColor,
+        selectedIconTheme: IconThemeData(
+          color: KDarkModeBackGroundColor,
+          size: 30,
+        ),
+        unselectedItemColor: Colors.white,
+      )
+
   );
 }
