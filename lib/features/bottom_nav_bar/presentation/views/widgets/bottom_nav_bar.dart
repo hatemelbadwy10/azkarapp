@@ -11,7 +11,6 @@ import '../../manger/nav_bar_cubit/navbar_cubit.dart';
 class BottomNavBarBody extends StatelessWidget {
   const BottomNavBarBody({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<NavbarCubit, NavbarState>(
@@ -34,7 +33,8 @@ class BottomNavBarBody extends StatelessWidget {
             bottomNavigationBar: CustomBottomNavBar(
               onChange: (index) {
                 cubit.changeBottomNavBar(index);
-              }, currentIndex: cubit.currentIndex,
+              },
+              currentIndex: cubit.currentIndex,
             ),
             body: containerBack(),
           );

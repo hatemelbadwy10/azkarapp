@@ -6,22 +6,19 @@ import '../../../data/repos/home_repo.dart';
 part 'all_azkar_state.dart';
 
 class AllAzkarCubit extends Cubit<AllAzkarState> {
-final  HomeRepo homeRepo;
+  final HomeRepo homeRepo;
   AllAzkarCubit(this.homeRepo) : super(AllAzkarInitial());
-  Future<void> getAllAzkar() async{
-emit(AllAzkarLoading());
- var result = await homeRepo.getAllAzkar();
+  Future<void> getAllAzkar() async {
+    emit(AllAzkarLoading());
+    var result = await homeRepo.getAllAzkar();
 
- result.fold(
-     (failure){
-       emit(AllAzkarFailure(errMassage: failure.errMassage));
-     },
-     (azkar){
-       emit(AllAzkarSuccess(azkar));
-     },
-
- );
-
-
+    result.fold(
+      (failure) {
+        emit(AllAzkarFailure(errMassage: failure.errMassage));
+      },
+      (azkar) {
+        emit(AllAzkarSuccess(azkar));
+      },
+    );
   }
 }

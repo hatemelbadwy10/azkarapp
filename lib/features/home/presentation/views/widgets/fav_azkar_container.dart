@@ -23,8 +23,9 @@ class FavAzkarContainer extends StatelessWidget {
               const Text('اذكار الصباح'),
               IconButton(
                   onPressed: () {},
-                  icon: const Icon(Icons.favorite_border_outlined,
-                  color: Colors.red,
+                  icon: const Icon(
+                    Icons.favorite_border_outlined,
+                    color: Colors.red,
                   ))
             ],
           ),

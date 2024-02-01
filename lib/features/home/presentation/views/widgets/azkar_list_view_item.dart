@@ -6,7 +6,7 @@ import '../../../data/models/elzekr_model/azkar_model.dart';
 
 class AzkarListViewItem extends StatelessWidget {
   const AzkarListViewItem({super.key, required this.azkarModel});
-final AzkarModel azkarModel;
+  final AzkarModel azkarModel;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -24,14 +24,13 @@ final AzkarModel azkarModel;
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
               color: Theme.of(context).colorScheme.primaryContainer),
-          child: const Directionality(
+          child:  Directionality(
               textDirection: TextDirection.rtl,
               child: Padding(
-                padding: EdgeInsets.all(4),
-                child: Text(
-               'اذكار الصبح'
-                 // style: Styles.textStyle14,
-                ),
+                padding: const EdgeInsets.all(4),
+                child: Text( azkarModel.azkarElsabah!.category!
+                    // style: Styles.textStyle14,
+                    ),
               )),
         ),
       ),

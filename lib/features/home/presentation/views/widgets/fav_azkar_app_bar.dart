@@ -1,6 +1,7 @@
 import 'package:azkarapp/core/widgets/change_theme_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class FavAzkarAppBar extends StatelessWidget {
   const FavAzkarAppBar({super.key});
 
@@ -8,11 +9,7 @@ class FavAzkarAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return const SafeArea(
       child: Row(
-        children: [
-          ChangeThemeIcon(),
-          CustomFavAzkar()
-
-        ],
+        children: [ChangeThemeIcon(), CustomFavAzkar()],
       ),
     );
   }
@@ -29,7 +26,7 @@ class CustomFavAzkar extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           color: Theme.of(context).colorScheme.primaryContainer),
-      child:  Padding(
+      child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8),
         child: Directionality(
           textDirection: TextDirection.rtl,
@@ -37,10 +34,10 @@ class CustomFavAzkar extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const Text('المفضلة'),
-              Icon(Icons.favorite,
-              color: Theme.of(context).colorScheme.inversePrimary,
+              Icon(
+                Icons.favorite,
+                color: Theme.of(context).colorScheme.inversePrimary,
               )
-
             ],
           ),
         ),
@@ -48,5 +45,3 @@ class CustomFavAzkar extends StatelessWidget {
     );
   }
 }
-
-

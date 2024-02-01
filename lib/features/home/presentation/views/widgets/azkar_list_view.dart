@@ -5,7 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AzkarListView extends StatelessWidget {
-  const AzkarListView({super.key,});
+  const AzkarListView({
+    super.key,
+  });
 
   //final Widget listViewItem;
 
@@ -20,24 +22,22 @@ class AzkarListView extends StatelessWidget {
               child: ListView.builder(
                   itemCount: state.azkarModel.length,
                   itemBuilder: (context, index) {
+                    print(state);
+                    return AzkarListViewItem(
 
-                return AzkarListViewItem(azkarModel: state.azkarModel[index],) ;
-              }),
+                      azkarModel: state.azkarModel[index],
+                    );
+                  }),
             ),
           );
-
-        }
-        else if( state is AllAzkarFailure){
+        } else if (state is AllAzkarFailure) {
+          print(state);
           return Text(state.errMassage);
-
-        }
-        else if(state is AllAzkarLoading){
+        } else if (state is AllAzkarLoading) {
           return const Center(child: CircularProgressIndicator());
-        }
-        else{
+        } else {
           return const Text('u are donkey');
         }
-
       },
     );
   }

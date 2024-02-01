@@ -2,6 +2,7 @@ import 'package:azkarapp/features/home/presentation/views/widgets/fav_Azkar_list
 import 'package:azkarapp/features/home/presentation/views/widgets/fav_azkar_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class FavAzkarBody extends StatelessWidget {
   const FavAzkarBody({super.key});
 
@@ -10,12 +11,7 @@ class FavAzkarBody extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.0),
       child: Column(
-        children: [
-          FavAzkarAppBar(),
-          FavAzkarListView()
-
-        ],
-
+        children: [FavAzkarAppBar(), FavAzkarListView()],
       ),
     );
   }

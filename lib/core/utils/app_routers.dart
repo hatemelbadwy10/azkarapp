@@ -10,13 +10,12 @@ import '../../features/bottom_nav_bar/presentation/views/bottom_nav_bar.dart';
 import '../../features/home/data/repos/home_repo_impl.dart';
 import 'api_services.dart';
 
-abstract class AppRouter{
+abstract class AppRouter {
   static const kHomeView = '/homeView';
 
   static final router = GoRouter(
     routes: [
-
-    /*  GoRoute(
+      /*  GoRoute(
         path: AppRouter.kHomeView,
         builder: (context, state) => BlocProvider(
           create: (context) => AllAzkarCubit(
@@ -27,18 +26,12 @@ abstract class AppRouter{
           ),
         ),
       ),*/
-      GoRoute(path: '/',
-        builder: (context, state) =>  BlocProvider(
+      GoRoute(
+        path: '/',
+        builder: (context, state) => BlocProvider(
             create: (context) => NavbarCubit(),
-                child:   const BottomNavBarBody()
-
-                      ),
-
-
-
-
+            child: const BottomNavBarBody()),
       )
     ],
   );
 }
-

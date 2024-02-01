@@ -1,6 +1,7 @@
 import 'package:azkarapp/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class FavAzkarListViewItem extends StatelessWidget {
   const FavAzkarListViewItem({super.key});
 
@@ -15,21 +16,22 @@ class FavAzkarListViewItem extends StatelessWidget {
           width: 327.w,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
-            color: Theme.of(context).colorScheme.primaryContainer
-          ),
+              color: Theme.of(context).colorScheme.primaryContainer),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('اذكار الصباح',
-              style: Styles.textStyle14,
+              Text(
+                'اذكار الصباح',
+                style: Styles.textStyle14,
               ),
-              IconButton(onPressed: (){}, icon: const Icon( Icons.restore_from_trash,
-                color: Colors.red,
-
-              ))
+              IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.restore_from_trash,
+                    color: Colors.red,
+                  ))
             ],
           ),
-
         ),
       ),
     );

@@ -36,7 +36,6 @@ class AzkarApp extends StatelessWidget {
             theme: lightTheme(context),
             darkTheme: darkTheme(context),
             themeMode: currentMode,
-
           ),
         );
       },
