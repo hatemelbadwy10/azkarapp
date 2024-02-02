@@ -14,7 +14,7 @@ class HomeRepoImpl implements HomeRepo {
     try {
       var data = await apiServices.getElazkar();
       List<AzkarModel> azkar = [];
-      for (var item in data['']) {
+      for (var item in data['اذكار الصباح']['اذكار الصباح']) {
         azkar.add(AzkarModel.fromjson(item));
         print(item);
       }
