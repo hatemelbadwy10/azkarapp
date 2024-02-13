@@ -16,9 +16,10 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) =>
-      AllAzkarCubit(HomeRepoImpl(ApiServices(Dio())))
-        ..getAllAzkar(),
+      create: (context) {
+        //todo: function here    AllAzkarCubit(HomeRepoImpl(ApiServices(Dio())))..getAllAzkar()
+        return           AllAzkarCubit(HomeRepoImpl(ApiServices(Dio())))
+      ;},
       child: const Scaffold(
         body: HomeViewBody(),
       ),

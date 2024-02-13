@@ -10,9 +10,9 @@ abstract class AllAzkarState extends Equatable {
 class AllAzkarInitial extends AllAzkarState {}
 
 class AllAzkarSuccess extends AllAzkarState {
-  final List<AzkarModel> azkarModel;
+  final List<AllAzkarModel> allAzkarModel;
 
-  const AllAzkarSuccess(this.azkarModel);
+  const AllAzkarSuccess(this.allAzkarModel);
 }
 
 class AllAzkarLoading extends AllAzkarState {}

@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import '../../../data/models/elzekr_model/all_azkar_model.dart';
 import '../../../data/models/elzekr_model/azkar_model.dart';
 import '../../../data/repos/home_repo.dart';
 
@@ -11,7 +12,7 @@ class AllAzkarCubit extends Cubit<AllAzkarState> {
   Future<void> getAllAzkar() async {
     emit(AllAzkarLoading());
     var result = await homeRepo.getAllAzkar();
-
+print("result : $result");
     result.fold(
       (failure) {
         emit(AllAzkarFailure(errMassage: failure.errMassage));

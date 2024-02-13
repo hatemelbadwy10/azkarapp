@@ -8,7 +8,7 @@ import 'azkar_elmasaa.dart';
 import 'azkar_elnom.dart';
 import 'azkar_elsabah.dart';
 
-class AzkarModel {
+/*class AzkarModel {
   final AzkarElsabah? azkarElsabah;
   final AzkarElmasaa? azkarElmasaa;
   final AzkarBadElsala? azkarBadElsalaa;
@@ -56,4 +56,4 @@ class AzkarModel {
         'أدعية قرآنية': adyaaElquran,
         'أدعية الأنبياء': adyaaElanbya
       };
-}
+}*/

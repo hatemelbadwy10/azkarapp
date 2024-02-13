@@ -1,3 +1,4 @@
+import 'package:azkarapp/features/home/presentation/views/widgets/azkar_details_list_view.dart';
 import 'package:azkarapp/features/home/presentation/views/widgets/azkar_list_view.dart';
 import 'package:azkarapp/features/home/presentation/views/widgets/azkar_view_app_bar.dart';
 import 'package:azkarapp/features/home/presentation/views/widgets/elzekr_details.dart';
@@ -17,7 +18,7 @@ class AzkarViewBody extends StatelessWidget {
           SizedBox(
             height: 32.h,
           ),
-          const AzkarListView()
+           const AzkarDetailsListView()
         ],
       ),
     );

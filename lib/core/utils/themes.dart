@@ -1,5 +1,4 @@
 import 'package:azkarapp/constants.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 ThemeData lightTheme(BuildContext context) {
@@ -21,11 +20,11 @@ ThemeData lightTheme(BuildContext context) {
           primary: Colors.black,
           primaryContainer: Colors.white,
           secondaryContainer: KDarkModeContainerColor,
-          tertiaryContainer: Color(0xffDFE0F3),
+          tertiaryContainer: const Color(0xffDFE0F3),
           secondary: KDarkModeContainerColor,
           inversePrimary: KDarkModeContainerColor,
-          onPrimary: Color(0xff7796CB),
-          onBackground: Color(0xff878787)),
+          onPrimary: const Color(0xff7796CB),
+          onBackground: const Color(0xff878787)),
       textTheme: Theme.of(context).textTheme.apply(
           bodyColor: Colors.black,
 
@@ -117,10 +116,10 @@ ThemeData darkTheme(BuildContext context) {
           //primary: Colors.white,
           primaryContainer: KDarkModeContainerColor,
           secondaryContainer: KDarkModeBackGroundColor,
-          tertiaryContainer: Color(0xffDFE0F3),
+          tertiaryContainer: const Color(0xffDFE0F3),
           secondary: KDarkModeBackGroundColor,
           inversePrimary: Colors.white,
-          onPrimary: Color(0xff7796CB),
+          onPrimary: const Color(0xff7796CB),
           onBackground: Colors.white),
       textTheme: Theme.of(context)
           .textTheme

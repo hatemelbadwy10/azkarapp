@@ -6,7 +6,6 @@ import 'package:azkarapp/features/elsalah_times/data/repo/elsalah_repo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
-
 class ElsalahTimesImpl implements ElsalahTimesRepo {
   final ApiServices apiServices;
 
@@ -16,7 +15,7 @@ class ElsalahTimesImpl implements ElsalahTimesRepo {
     try {
       var data = await apiServices.getElsalahTimes();
       List<ElsalahTimesModel> elsalahTimesModel = [];
-      for (var times in data['data']['date']) {
+      for (var times in data['items']) {
         try {
           elsalahTimesModel.add(ElsalahTimesModel.fromJson(times));
           print(times);

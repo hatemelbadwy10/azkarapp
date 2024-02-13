@@ -16,14 +16,17 @@ class ElsalahTimesListView extends StatelessWidget {
         if (state is ElsalahTimesSuccess) {
           return Expanded(
             child: ListView.builder(itemBuilder: (context, index) {
+              print(state);
               return const SalahTimeDetails();
             }),
           );
         } else if (state is ElsalahTimesFailure) {
+          print(state);
           print(state.errMassage);
           return Text(state.errMassage);
         } else {
           //print(apiServices?.getElsalahTimes());
+          print(state);
           return CircularProgressIndicator();
 
           //  print( context.read<ElsalahTimesCubit>().)

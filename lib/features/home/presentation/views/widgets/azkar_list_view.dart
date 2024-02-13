@@ -4,6 +4,10 @@ import 'package:azkarapp/features/home/presentation/views/widgets/azkar_list_vie
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../data/models/elzekr_model/all_azkar_model.dart';
+import '../../../data/models/elzekr_model/all_azkar_model.dart';
+import '../../../data/models/elzekr_model/all_azkar_model.dart';
+
 class AzkarListView extends StatelessWidget {
   const AzkarListView({
     super.key,
@@ -20,12 +24,11 @@ class AzkarListView extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.only(top: 8.0),
               child: ListView.builder(
-                  itemCount: state.azkarModel.length,
+                  itemCount: state.allAzkarModel.length,
                   itemBuilder: (context, index) {
                     print(state);
                     return AzkarListViewItem(
-
-                      azkarModel: state.azkarModel[index],
+                      allAzkarModel: state.allAzkarModel[index],
                     );
                   }),
             ),

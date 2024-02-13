@@ -6,20 +6,22 @@ class SearchTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return
+      SizedBox(
       height: 32.w,
-      width: 219.h,
-      child: const Directionality(
-        textDirection: TextDirection.rtl,
-        child: TextField(
-          decoration: InputDecoration(
-            hintText: 'بحث',
-            prefixIcon: Icon(
-              Icons.search,
-            ),
-          ),
-        ),
-      ),
+     width: 219.h,
+      child:
+       const Directionality(
+         textDirection: TextDirection.rtl,
+         child: TextField(
+           decoration: InputDecoration(
+             hintText: 'بحث',
+             prefixIcon: Icon(
+               Icons.search,
+             ),
+           ),
+         ),
+       ),
     );
   }
 }
