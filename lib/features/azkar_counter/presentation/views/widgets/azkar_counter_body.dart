@@ -18,39 +18,42 @@ class AzkarCounterBody extends StatelessWidget {
           builder: (BuildContext context, int state) {
             return Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Column(
-                children: [
-                  const AzkarCounterAppBar(),
-                  SizedBox(
-                    height: 184.h,
-                  ),
-                  CounterShape(
-                    counter: '$state',
-                  ),
-                  SizedBox(
-                    height: 24.h,
-                  ),
-                  CustomCounterButton(
-                    buttonLabel: 'تسبيح',
-                    textColor: Colors.white,
-                    buttonColor:
-                        const MaterialStatePropertyAll(KDarkModeContainerColor),
-                    onPress: () {
-                      context.read<CounterCubit>().increment();
-                    },
-                  ),
-                  SizedBox(
-                    height: 16.h,
-                  ),
-                  CustomCounterButton(
-                    buttonLabel: 'إعادة',
-                    textColor: KDarkModeContainerColor,
-                    buttonColor: const MaterialStatePropertyAll(Colors.white),
-                    onPress: () {
-                      context.read<CounterCubit>().reset();
-                    },
-                  )
-                ],
+              child: SingleChildScrollView (
+                child: Column(
+                  children: [
+                    const AzkarCounterAppBar(),
+                    SizedBox(
+                      height: 184.h,
+                    ),
+                    CounterShape(
+                      counter: '$state',
+                    ),
+                    SizedBox(
+                      height: 24.h,
+                    ),
+                    CustomCounterButton(
+                      buttonLabel: 'تسبيح',
+                      textColor: Colors.white,
+                      buttonColor:
+                          const MaterialStatePropertyAll(kDarkModeContainerColor),
+                      onPress: () {
+                        context.read<CounterCubit>().increment();
+                      },
+                    ),
+                    SizedBox(
+                      height: 16.h,
+                    ),
+                    CustomCounterButton(
+                      buttonLabel: 'إعادة',
+                      textColor: kDarkModeContainerColor,
+                      buttonColor: const MaterialStatePropertyAll(Colors.white),
+                      onPress: () {
+                        context.read<CounterCubit>().reset();
+                
+                      },
+                    )
+                  ],
+                ),
               ),
             );
           },

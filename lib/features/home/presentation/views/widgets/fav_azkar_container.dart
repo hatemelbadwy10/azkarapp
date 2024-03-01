@@ -1,10 +1,11 @@
+import 'package:azkarapp/features/home/data/models/elzekr_model/all_azkar_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive/hive.dart';
 
 class FavAzkarContainer extends StatelessWidget {
-  const FavAzkarContainer({super.key});
-
+  const FavAzkarContainer({super.key, required this.allAzkarModel});
+final AllAzkarModel allAzkarModel;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,9 +21,12 @@ class FavAzkarContainer extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text('اذكار الصباح'),
+               Text(allAzkarModel.category!),
               IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+
+                    
+                  },
                   icon: const Icon(
                     Icons.favorite_border_outlined,
                     color: Colors.red,

@@ -16,11 +16,11 @@ class HomeRepoImpl implements HomeRepo {
       print("data from home repo implemenation");
       var data =await  apiServices.getElazkar();
       print("data $data" );
-      List<AllAzkarModel> azkar = [];
+      List<AllAzkarModel> azkar = List<Map<String,dynamic>>.from(data).map((e) => AllAzkarModel.fromJson(e)).toList();
 
-      for (var item in data[''] ) {
+     /* for (var item in data[''] ) {
         azkar.add(AllAzkarModel.fromJson(item));
-      }
+      }*/
 
       return right(azkar);
     } catch (e) {

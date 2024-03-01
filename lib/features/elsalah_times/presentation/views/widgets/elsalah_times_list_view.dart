@@ -15,10 +15,16 @@ class ElsalahTimesListView extends StatelessWidget {
       builder: (context, state) {
         if (state is ElsalahTimesSuccess) {
           return Expanded(
-            child: ListView.builder(itemBuilder: (context, index) {
-              print(state);
-              return const SalahTimeDetails();
-            }),
+            child:Column(
+              children: [
+                SalahTimeDetails(elsalahName: 'صلاه الفجر', elsalahTime: state.elsalahTimesList.fajr,),
+                SalahTimeDetails(elsalahName: 'صلاه الظهر', elsalahTime: state.elsalahTimesList.dhuhr,),
+                SalahTimeDetails(elsalahName: 'صلاه العصر', elsalahTime: state.elsalahTimesList.asr,),
+                SalahTimeDetails(elsalahName: 'صلاه المغرب', elsalahTime: state.elsalahTimesList.maghrib,),
+                SalahTimeDetails(elsalahName: 'صلاه العشاء', elsalahTime: state.elsalahTimesList.isha,)
+
+              ],
+            )
           );
         } else if (state is ElsalahTimesFailure) {
           print(state);

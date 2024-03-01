@@ -11,18 +11,18 @@ class ElsalahTimesImpl implements ElsalahTimesRepo {
 
   ElsalahTimesImpl(this.apiServices);
   @override
-  Future<Either<Failure, List<ElsalahTimesModel>>> getElsalahTimes() async {
+  Future<Either<Failure, ElsalahTimesModel>> getElsalahTimes() async {
     try {
       var data = await apiServices.getElsalahTimes();
-      List<ElsalahTimesModel> elsalahTimesModel = [];
-      for (var times in data['items']) {
+      ElsalahTimesModel elsalahTimesModel = ElsalahTimesModel.fromJson(data);
+     /* for (var times in data['items']) {
         try {
           elsalahTimesModel.add(ElsalahTimesModel.fromJson(times));
           print(times);
         } catch (e) {
           elsalahTimesModel.add(ElsalahTimesModel.fromJson(times));
         }
-      }
+      }*/
       return right(elsalahTimesModel);
     } catch (e) {
       if (e is DioException) {

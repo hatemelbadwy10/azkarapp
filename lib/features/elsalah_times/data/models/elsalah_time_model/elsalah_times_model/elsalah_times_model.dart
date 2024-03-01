@@ -453,14 +453,41 @@ class Offset {
 }*/
 
 class ElsalahTimesModel {
-  ElsalahTimesModel({required this.items});
+ /* ElsalahTimesModel({required this.items});
   late final List<Items> items;
   ElsalahTimesModel.fromJson(Map<String, dynamic> json) {
     items = List.from(json['items']).map((e) => Items.fromJson(e)).toList();
+  }*/
+  ElsalahTimesModel({
+    required this.dateFor,
+    required this.fajr,
+    required this.shurooq,
+    required this.dhuhr,
+    required this.asr,
+    required this.maghrib,
+    required this.isha,
+
+});
+  late final String dateFor;
+  late final String fajr;
+  late final String shurooq;
+  late final String dhuhr;
+  late final String asr;
+  late final String maghrib;
+  late final String isha;
+  ElsalahTimesModel.fromJson(Map<String, dynamic> json) {
+    dateFor = json['date_for'];
+    fajr = json['fajr'];
+    shurooq = json['shurooq'];
+    dhuhr = json['dhuhr'];
+    asr = json['asr'];
+    maghrib = json['maghrib'];
+    isha = json['isha'];
   }
+
 }
 
-class Items {
+/*class Items {
   Items({
     required this.dateFor,
     required this.fajr,
@@ -488,4 +515,4 @@ class Items {
     maghrib = json['maghrib'];
     isha = json['isha'];
   }
-}
+}*/

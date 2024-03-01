@@ -13,16 +13,16 @@ ThemeData lightTheme(BuildContext context) {
       fillColor: MaterialStateProperty.all(Colors.green),
     ),*/
       // primaryColor: Colors.black,
-      scaffoldBackgroundColor: KLightModeThemeColor,
+      scaffoldBackgroundColor: kLightModeThemeColor,
 
       //dividerColor: Colors.black,
       colorScheme: Theme.of(context).colorScheme.copyWith(
           primary: Colors.black,
           primaryContainer: Colors.white,
-          secondaryContainer: KDarkModeContainerColor,
+          secondaryContainer: kDarkModeContainerColor,
           tertiaryContainer: const Color(0xffDFE0F3),
-          secondary: KDarkModeContainerColor,
-          inversePrimary: KDarkModeContainerColor,
+          secondary: kDarkModeContainerColor,
+          inversePrimary: kDarkModeContainerColor,
           onPrimary: const Color(0xff7796CB),
           onBackground: const Color(0xff878787)),
       textTheme: Theme.of(context).textTheme.apply(
@@ -34,9 +34,9 @@ ThemeData lightTheme(BuildContext context) {
       //primaryTextTheme: ThemeData.light().textTheme.apply(),
 
       inputDecorationTheme: InputDecorationTheme(
-        hintStyle: const TextStyle(color: KLightModeThemeColor),
-        prefixIconColor: KLightModeThemeColor,
-        suffixIconColor: KLightModeThemeColor,
+        hintStyle: const TextStyle(color: kLightModeThemeColor),
+        prefixIconColor: kLightModeThemeColor,
+        suffixIconColor: kLightModeThemeColor,
         //contentPadding: const EdgeInsets.all(8),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12.0),
@@ -110,14 +110,14 @@ ThemeData darkTheme(BuildContext context) {
         TargetPlatform.android: ZoomPageTransitionsBuilder(),
       },
     ),*/
-      primaryColor: KDarkModeContainerColor,
-      scaffoldBackgroundColor: KDarkModeBackGroundColor,
+      primaryColor: kDarkModeContainerColor,
+      scaffoldBackgroundColor: kDarkModeBackGroundColor,
       colorScheme: Theme.of(context).colorScheme.copyWith(
           //primary: Colors.white,
-          primaryContainer: KDarkModeContainerColor,
-          secondaryContainer: KDarkModeBackGroundColor,
+          primaryContainer: kDarkModeContainerColor,
+          secondaryContainer: kDarkModeBackGroundColor,
           tertiaryContainer: const Color(0xffDFE0F3),
-          secondary: KDarkModeBackGroundColor,
+          secondary: kDarkModeBackGroundColor,
           inversePrimary: Colors.white,
           onPrimary: const Color(0xff7796CB),
           onBackground: Colors.white),
@@ -133,7 +133,7 @@ ThemeData darkTheme(BuildContext context) {
         prefixIconColor: Colors.white,
         suffixIconColor: Colors.white,
         // focusColor: Colors.grey,
-        fillColor: KDarkModeContainerColor,
+        fillColor: kDarkModeContainerColor,
         filled: true,
         contentPadding: const EdgeInsets.all(8),
 
@@ -161,14 +161,14 @@ ThemeData darkTheme(BuildContext context) {
         backgroundColor: Colors.black,
       ),
       navigationBarTheme: const NavigationBarThemeData(
-        backgroundColor: KDarkModeContainerColor,
-        indicatorColor: KDarkModeBackGroundColor,
+        backgroundColor: kDarkModeContainerColor,
+        indicatorColor: kDarkModeBackGroundColor,
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-        backgroundColor: KDarkModeContainerColor,
-        selectedItemColor: KDarkModeBackGroundColor,
+        backgroundColor: kDarkModeContainerColor,
+        selectedItemColor: kDarkModeBackGroundColor,
         selectedIconTheme: IconThemeData(
-          color: KDarkModeBackGroundColor,
+          color: kDarkModeBackGroundColor,
           size: 30,
         ),
         unselectedItemColor: Colors.white,

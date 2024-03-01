@@ -14,7 +14,7 @@ class AzkarListViewItem extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const AzkarView()),
+          MaterialPageRoute(builder: (context) =>  AzkarView(allAzkarModel: allAzkarModel, id: allAzkarModel.id!,)),
         );
       },
       child: Padding(

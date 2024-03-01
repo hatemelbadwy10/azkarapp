@@ -3,5 +3,5 @@ import 'package:azkarapp/features/elsalah_times/data/models/elsalah_time_model/e
 import 'package:dartz/dartz.dart';
 
 abstract class ElsalahTimesRepo {
-  Future<Either<Failure, List<ElsalahTimesModel>>> getElsalahTimes();
+  Future<Either<Failure, ElsalahTimesModel>> getElsalahTimes();
 }

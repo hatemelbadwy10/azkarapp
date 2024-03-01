@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SalahTimeDetails extends StatelessWidget {
-  const SalahTimeDetails({super.key});
-
+  const SalahTimeDetails({super.key, required this.elsalahName, required this.elsalahTime});
+final String elsalahName;
+final String elsalahTime;
   @override
   Widget build(BuildContext context) {
     return Directionality(
@@ -23,11 +24,11 @@ class SalahTimeDetails extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'صلاة الفجر',
+                  elsalahName,
                   style: Styles.textStyle14,
                 ),
                 Text(
-                  '5.21',
+                  elsalahTime,
                   style: Styles.textStyle14.copyWith(
                       fontWeight: FontWeight.bold,
                       color: Theme.of(context).colorScheme.secondary),

@@ -1,16 +1,19 @@
 import 'package:azkarapp/core/utils/styles.dart';
+import 'package:azkarapp/features/home/data/models/elzekr_model/all_azkar_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:readmore/readmore.dart';
 
 class ElzekrDetails extends StatelessWidget {
-  const ElzekrDetails({super.key});
-
+  const ElzekrDetails({super.key, required this.allAzkarModel, required this.id});
+final AllAzkarModel allAzkarModel;
+final int id;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 8.0),
       child: Container(
-        height: 104.h,
+        height: 220.h,
         width: 327.w,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
@@ -24,11 +27,12 @@ class ElzekrDetails extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text(
-                  '  اصبحنا واصبح الملك  لله ولااله الى الله ولاحول ولا قوة اللى بالله العلي العظيم',
+                ReadMoreText(
+                  allAzkarModel.array![id-1]!.text! ,
                   style: Styles.textStyle14,
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 4,
+                  trimMode: TrimMode.Line,
+                  trimCollapsedText: 'قراءه المزيد',
+                  trimExpandedText: ' اخفاء',
                 ),
                 const Spacer(),
                 Padding(
@@ -43,7 +47,7 @@ class ElzekrDetails extends StatelessWidget {
                     alignment: Alignment.bottomLeft,
                     child: Center(
                         child: Text(
-                      'مره واحده',
+                      allAzkarModel.array![id-1]!.count!.toString(),
                       style: Styles.textStyle14,
                     )),
                   ),

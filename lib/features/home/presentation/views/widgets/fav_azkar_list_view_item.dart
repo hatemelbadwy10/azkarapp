@@ -27,7 +27,7 @@ class FavAzkarListViewItem extends StatelessWidget {
               IconButton(
                   onPressed: () {},
                   icon: const Icon(
-                    Icons.restore_from_trash,
+                    Icons.delete,
                     color: Colors.red,
                   ))
             ],

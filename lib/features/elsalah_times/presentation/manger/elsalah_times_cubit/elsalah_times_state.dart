@@ -11,7 +11,7 @@ class ElsalahTimesInitial extends ElsalahTimesState {}
 class ElsalahTimesLoading extends ElsalahTimesState {}
 
 class ElsalahTimesSuccess extends ElsalahTimesState {
-  final List<ElsalahTimesModel> elsalahTimesList;
+  final ElsalahTimesModel elsalahTimesList;
 
   const ElsalahTimesSuccess(this.elsalahTimesList);
 }
