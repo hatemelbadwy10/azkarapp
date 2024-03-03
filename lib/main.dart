@@ -10,7 +10,7 @@ import 'core/utils/hive_helper.dart';
 //import 'features/data/repos/home_repo_impl.dart';
 import 'features/home/presentation/views/home_view.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+List<AllAzkarModel> favList=[];
 void main() async {
   await HiveHelper.init();
   await HiveHelper.getTheme ?? await HiveHelper.cacheTheme(value: false);
