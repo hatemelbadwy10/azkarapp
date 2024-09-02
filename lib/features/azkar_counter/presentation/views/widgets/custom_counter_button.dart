@@ -12,7 +12,7 @@ class CustomCounterButton extends StatelessWidget {
   final String buttonLabel;
   final Color textColor;
   final void Function()? onPress;
-  final MaterialStateProperty<Color?> buttonColor;
+  final WidgetStateProperty<Color?> buttonColor;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -20,7 +20,7 @@ class CustomCounterButton extends StatelessWidget {
       height: 42.h,
       child: ElevatedButton(
           style: ButtonStyle(
-              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                 RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12.0),
                 ),

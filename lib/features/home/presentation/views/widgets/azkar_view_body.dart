@@ -1,8 +1,6 @@
 import 'package:azkarapp/features/home/data/models/elzekr_model/all_azkar_model.dart';
 import 'package:azkarapp/features/home/presentation/views/widgets/azkar_details_list_view.dart';
-import 'package:azkarapp/features/home/presentation/views/widgets/azkar_list_view.dart';
 import 'package:azkarapp/features/home/presentation/views/widgets/azkar_view_app_bar.dart';
-import 'package:azkarapp/features/home/presentation/views/widgets/elzekr_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

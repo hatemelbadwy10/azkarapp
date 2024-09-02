@@ -20,5 +20,5 @@ class AllAzkarLoading extends AllAzkarState {}
 class AllAzkarFailure extends AllAzkarState {
   final String errMassage;
 
-  AllAzkarFailure({required this.errMassage});
+  const AllAzkarFailure({required this.errMassage});
 }

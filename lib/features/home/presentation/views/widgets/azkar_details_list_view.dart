@@ -1,10 +1,8 @@
-import 'package:azkarapp/features/elsalah_times/presentation/manger/elsalah_times_cubit/elsalah_times_cubit.dart';
 import 'package:azkarapp/features/home/data/models/elzekr_model/all_azkar_model.dart';
 import 'package:azkarapp/features/home/presentation/manger/all_azkar_cubit/all_azkar_cubit.dart';
 import 'package:azkarapp/features/home/presentation/views/widgets/elzekr_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AzkarDetailsListView extends StatelessWidget {
   const AzkarDetailsListView({super.key, required this.allAzkarModel, required this.id});

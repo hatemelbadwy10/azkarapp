@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../main.dart';
+import '../utils/hive_helper.dart';
 
 class ChangeThemeIcon extends StatefulWidget {
   const ChangeThemeIcon({super.key});
@@ -12,10 +13,13 @@ class ChangeThemeIcon extends StatefulWidget {
 class _ChangeThemeIconState extends State<ChangeThemeIcon> {
   void changeIcon() {
     setState(() {
-      AzkarApp.themeNotifier.value =
-          AzkarApp.themeNotifier.value == ThemeMode.light
-              ? ThemeMode.dark
-              : ThemeMode.light;
+      if (AzkarApp.themeNotifier.value == ThemeMode.light) {
+        AzkarApp.themeNotifier.value = ThemeMode.dark;
+        HiveHelper.cacheTheme(value: true);
+      } else {
+        AzkarApp.themeNotifier.value = ThemeMode.light;
+        HiveHelper.cacheTheme(value: false);
+      }
     });
   }
 

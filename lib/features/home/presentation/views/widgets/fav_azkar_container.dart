@@ -1,6 +1,7 @@
+import 'dart:developer';
+
 import 'package:azkarapp/features/home/data/models/elzekr_model/all_azkar_model.dart';
 import 'package:azkarapp/features/home/presentation/manger/fav_cubit/fav_cubit.dart';
-import 'package:azkarapp/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,7 +14,7 @@ class FavAzkarContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => FavCubit(allAzkarModel),
+      create: (context) => FavCubit(),
       child: BlocBuilder<FavCubit, FavState>(
         builder: (context, state) {
           return Container(
@@ -21,10 +22,7 @@ class FavAzkarContainer extends StatelessWidget {
             height: 32.h,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
-                color: Theme
-                    .of(context)
-                    .colorScheme
-                    .primaryContainer),
+                color: Theme.of(context).colorScheme.primaryContainer),
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8),
               child: Directionality(
@@ -35,15 +33,26 @@ class FavAzkarContainer extends StatelessWidget {
                     Text(allAzkarModel.category!),
                     IconButton(
                         onPressed: () {
-                          if (favList.contains(allAzkarModel)) {
-                            context.read<FavCubit>().removeZekr();
+                          if (context
+                              .read<FavCubit>()
+                              .allAzkar
+                              .contains(allAzkarModel)) {
+                            context
+                                .read<FavCubit>()
+                                .removeZekr( allAzkarModel);
+                            context
+                                .read<FavCubit>()
+                                .fetchAllNotes();
+                          } else {
+                            context
+                                .read<FavCubit>()
+                                .addZekr( allAzkarModel);
+                            // context
+                            //     .read<FavCubit>()
+                            //     .fetchAllNotes();
                           }
-                          else{
-                            context.read<FavCubit>().addZekr();
-                          }
-                         },
-                        icon:  favIcon()
-                    )
+                        },
+                        icon: favIcon(context))
                   ],
                 ),
               ),
@@ -53,20 +62,18 @@ class FavAzkarContainer extends StatelessWidget {
       ),
     );
   }
-  Icon favIcon(){
-    if(favList.contains(allAzkarModel)){
-      return  const Icon(
 
+  Icon favIcon(BuildContext context) {
+    if (context.read<FavCubit>().allAzkar.contains(allAzkarModel)) {
+      log('context.read<FavCubit>().allAzkar.contains(allAzkarModel)${context.read<FavCubit>().allAzkar.contains(allAzkarModel)}');
+      return const Icon(
         Icons.favorite,
         color: Colors.red,
       );
-
-    }
-    else{
-      return  const Icon(
-
+    } else {
+      log('context.read<FavCubit>().allAzkar.contains(allAzkarModel)${context.read<FavCubit>().allAzkar.contains(allAzkarModel)}');
+      return const Icon(
         Icons.favorite_border_outlined,
-
       );
     }
   }

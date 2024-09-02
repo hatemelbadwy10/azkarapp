@@ -13,9 +13,7 @@ class HomeRepoImpl implements HomeRepo {
   @override
   Future<Either<Failure, List<AllAzkarModel>>> getAllAzkar() async {
     try {
-      print("data from home repo implemenation");
       var data =await  apiServices.getElazkar();
-      print("data $data" );
       List<AllAzkarModel> azkar = List<Map<String,dynamic>>.from(data).map((e) => AllAzkarModel.fromJson(e)).toList();
 
      /* for (var item in data[''] ) {

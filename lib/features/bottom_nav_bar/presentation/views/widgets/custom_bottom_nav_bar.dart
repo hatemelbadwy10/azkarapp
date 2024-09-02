@@ -1,4 +1,3 @@
-import 'package:azkarapp/constants.dart';
 import 'package:flutter/material.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
@@ -27,7 +26,7 @@ class CustomBottomNavBar extends StatelessWidget {
                 ),
                 icon: Icon(
                   Icons.home,
-                  color: Theme.of(context).colorScheme.onBackground,
+                  color: Theme.of(context).colorScheme.onSurface,
                 ),
                 label: ''),
             NavigationDestination(
@@ -37,7 +36,7 @@ class CustomBottomNavBar extends StatelessWidget {
                 ),
                 icon: Icon(
                   Icons.calendar_month_outlined,
-                  color: Theme.of(context).colorScheme.onBackground,
+                  color: Theme.of(context).colorScheme.onSurface,
                 ),
                 label: ''),
             NavigationDestination(
@@ -47,7 +46,7 @@ class CustomBottomNavBar extends StatelessWidget {
                 ),
                 icon: Icon(
                   Icons.favorite,
-                  color: Theme.of(context).colorScheme.onBackground,
+                  color: Theme.of(context).colorScheme.onSurface,
                 ),
                 label: ''),
             NavigationDestination(
@@ -57,7 +56,7 @@ class CustomBottomNavBar extends StatelessWidget {
                 ),
                 icon: Icon(
                   Icons.replay,
-                  color: Theme.of(context).colorScheme.onBackground,
+                  color: Theme.of(context).colorScheme.onSurface,
                 ),
                 label: ''),
           ],

@@ -1,12 +1,4 @@
 //import 'package:azkarapp/features/data/models/elzekrmodel/adyaa_elquran.dart';
-import 'package:azkarapp/features/home/data/models/elzekr_model/tasabeh.dart';
-import 'adyaa_elanbyaa.dart';
-import 'adyaa_elquran.dart';
-import 'azkar_bad_elsalla.dart';
-import 'azkar_eleztykaq.dart';
-import 'azkar_elmasaa.dart';
-import 'azkar_elnom.dart';
-import 'azkar_elsabah.dart';
 
 /*class AzkarModel {
   final AzkarElsabah? azkarElsabah;

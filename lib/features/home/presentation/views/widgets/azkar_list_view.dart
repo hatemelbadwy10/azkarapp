@@ -1,12 +1,8 @@
 import 'package:azkarapp/features/home/presentation/manger/all_azkar_cubit/all_azkar_cubit.dart';
-import 'package:azkarapp/features/home/presentation/manger/all_azkar_cubit/all_azkar_cubit.dart';
 import 'package:azkarapp/features/home/presentation/views/widgets/azkar_list_view_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../data/models/elzekr_model/all_azkar_model.dart';
-import '../../../data/models/elzekr_model/all_azkar_model.dart';
-import '../../../data/models/elzekr_model/all_azkar_model.dart';
 
 class AzkarListView extends StatelessWidget {
   const AzkarListView({
@@ -26,7 +22,6 @@ class AzkarListView extends StatelessWidget {
               child: ListView.builder(
                   itemCount: state.allAzkarModel.length,
                   itemBuilder: (context, index) {
-                    print(state);
                     return AzkarListViewItem(
                       allAzkarModel: state.allAzkarModel[index],
                     );
@@ -34,7 +29,6 @@ class AzkarListView extends StatelessWidget {
             ),
           );
         } else if (state is AllAzkarFailure) {
-          print(state);
           return Text(state.errMassage);
         } else if (state is AllAzkarLoading) {
           return const Center(child: CircularProgressIndicator());

@@ -5,16 +5,21 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:readmore/readmore.dart';
 
 class ElzekrDetails extends StatelessWidget {
-  const ElzekrDetails({super.key, required this.allAzkarModel, required this.id});
-final AllAzkarModel allAzkarModel;
-final int id;
+  const ElzekrDetails(
+      {super.key, required this.allAzkarModel, required this.id});
+
+  final AllAzkarModel allAzkarModel;
+  final int id;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 8.0),
       child: Container(
-        height: 220.h,
-        width: 327.w,
+        constraints: BoxConstraints(
+          minWidth: double.infinity,  // Set a minimum height for the container
+          maxWidth: 327.w,   // Set a maximum width for the container
+        ),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             color: Theme.of(context).colorScheme.primaryContainer),
@@ -27,12 +32,9 @@ final int id;
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                ReadMoreText(
-                  allAzkarModel.array![id-1]!.text! ,
+                Text(
+                  allAzkarModel.array![id - 1]!.text!,
                   style: Styles.textStyle14,
-                  trimMode: TrimMode.Line,
-                  trimCollapsedText: 'قراءه المزيد',
-                  trimExpandedText: ' اخفاء',
                 ),
                 const Spacer(),
                 Padding(
@@ -47,7 +49,7 @@ final int id;
                     alignment: Alignment.bottomLeft,
                     child: Center(
                         child: Text(
-                      allAzkarModel.array![id-1]!.count!.toString(),
+                      allAzkarModel.array![id - 1]!.count!.toString(),
                       style: Styles.textStyle14,
                     )),
                   ),

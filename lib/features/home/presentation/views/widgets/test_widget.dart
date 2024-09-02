@@ -9,12 +9,12 @@ class Test extends StatelessWidget {
     return Container(
       width: 200.0,
       height: 200.0,
-      margin: EdgeInsets.all(20.0),
-      padding: EdgeInsets.all(10.0),
+      margin: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.all(10.0),
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.primaryContainer,
         borderRadius: BorderRadius.circular(10.0),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             color: Colors.black,
             offset: Offset(4, 4),

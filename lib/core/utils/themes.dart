@@ -24,7 +24,7 @@ ThemeData lightTheme(BuildContext context) {
           secondary: kDarkModeContainerColor,
           inversePrimary: kDarkModeContainerColor,
           onPrimary: const Color(0xff7796CB),
-          onBackground: const Color(0xff878787)),
+          onSurface: const Color(0xff878787)),
       textTheme: Theme.of(context).textTheme.apply(
           bodyColor: Colors.black,
 
@@ -120,7 +120,7 @@ ThemeData darkTheme(BuildContext context) {
           secondary: kDarkModeBackGroundColor,
           inversePrimary: Colors.white,
           onPrimary: const Color(0xff7796CB),
-          onBackground: Colors.white),
+          onSurface: Colors.white),
       textTheme: Theme.of(context)
           .textTheme
           .apply(bodyColor: Colors.white, fontFamily: 'cairo'),

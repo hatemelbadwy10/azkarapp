@@ -1,35 +1,43 @@
-
-import 'dart:convert';
-
-import 'package:azkarapp/main.dart';
 import 'package:bloc/bloc.dart';
+import 'package:hive/hive.dart';
 import 'package:meta/meta.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
+import '../../../../../constants.dart';
 import '../../../data/models/elzekr_model/all_azkar_model.dart';
 
 part 'fav_state.dart';
 
 class FavCubit extends Cubit<FavState> {
-  final AllAzkarModel allAzkarModel;
+  FavCubit() : super(FavInitial());
+  List<AllAzkarModel> allAzkar = [];
 
-  FavCubit(this.allAzkarModel) : super(FavInitial());
-  Future<void> saveFavList( favList) async {
-    final prefs = await SharedPreferences.getInstance();
-    final favListJson = favList.map((item) => json.encode(item.toJson())).toList();
-    await prefs.setStringList('favList', favListJson);
+  void fetchAllNotes() async {
+    var box = await Hive.openBox<List<AllAzkarModel>>(kFavAzkar);
+
+    allAzkar = box.get('favAzkarListKey') ?? [];
+
+    emit(GetAllFavListSuccess());
   }
 
-  void addZekr() {
-    favList.add(allAzkarModel);
-saveFavList(allAzkarModel);
+  void addZekr(AllAzkarModel allAzkarModel) async {
+    var box = await Hive.openBox<List<AllAzkarModel>>(kFavAzkar);
+    List<AllAzkarModel> list = box.get('favAzkarListKey') ?? [];
+    list.add(allAzkarModel);
+    await box.put('favAzkarListKey', list);
     emit(FavAdd());
   }
 
-  void removeZekr() {
-    favList.remove(allAzkarModel);
-    saveFavList(allAzkarModel);
+  void removeZekr(AllAzkarModel allAzkarModel) async {
+    var box = Hive.box<List<AllAzkarModel>>(kFavAzkar);
+
+    // Get the existing list
+    List<AllAzkarModel> list = box.get('favAzkarListKey', defaultValue: [])!;
+
+    // Remove the item from the list
+    list.remove(allAzkarModel);
+
+    // Store the updated list back into the box
+    await box.put('favAzkarListKey', list);
+
     emit(FavRemove());
   }
-
 }

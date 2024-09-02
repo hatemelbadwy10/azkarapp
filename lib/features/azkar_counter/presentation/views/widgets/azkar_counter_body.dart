@@ -35,7 +35,7 @@ class AzkarCounterBody extends StatelessWidget {
                       buttonLabel: 'تسبيح',
                       textColor: Colors.white,
                       buttonColor:
-                          const MaterialStatePropertyAll(kDarkModeContainerColor),
+                          const WidgetStatePropertyAll(kDarkModeContainerColor),
                       onPress: () {
                         context.read<CounterCubit>().increment();
                       },
@@ -46,7 +46,7 @@ class AzkarCounterBody extends StatelessWidget {
                     CustomCounterButton(
                       buttonLabel: 'إعادة',
                       textColor: kDarkModeContainerColor,
-                      buttonColor: const MaterialStatePropertyAll(Colors.white),
+                      buttonColor: const WidgetStatePropertyAll(Colors.white),
                       onPress: () {
                         context.read<CounterCubit>().reset();
                 

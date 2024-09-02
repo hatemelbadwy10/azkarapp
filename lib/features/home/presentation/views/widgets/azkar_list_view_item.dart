@@ -1,9 +1,7 @@
-import 'package:azkarapp/core/utils/styles.dart';
 import 'package:azkarapp/features/home/presentation/views/azkar_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../data/models/elzekr_model/all_azkar_model.dart';
-import '../../../data/models/elzekr_model/azkar_model.dart';
 
 class AzkarListViewItem extends StatelessWidget {
   const AzkarListViewItem({super.key, required this.allAzkarModel});

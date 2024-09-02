@@ -1,4 +1,3 @@
-import 'package:hive/hive.dart';
 import 'package:azkarapp/constants.dart';
 import 'package:hive_flutter/adapters.dart';
 
@@ -11,6 +10,7 @@ class HiveHelper {
     await Hive.initFlutter();
     await Hive.openBox(kHabitDatabase);
   }
+
   //===============================================================
 
   static Future<void> cacheTheme({required bool? value}) async {
@@ -36,4 +36,10 @@ class HiveHelper {
   static dynamic read({required String key}) async => await _appBox.get(key);
 
   static bool hasData({required String key}) => _appBox.containsKey(key);
+
+  static Future<void> delete({required String key}) async {
+    if (_appBox.containsKey(key)) {
+      await _appBox.delete(key);
+    }
+  }
 }
